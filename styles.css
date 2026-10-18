@@ -1,0 +1,112 @@
+/* Cute theme: blush pink, berry, plum, cream. Fonts: Fredoka + Nunito */
+:root {
+  --cream: #FFF9F5;
+  --blush: #FFE5EC;
+  --pink: #FF8FAB;
+  --berry: #B5446E;
+  --plum: #5A3E5C;
+  --lavender: #EADCF5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--plum);
+  background-color: var(--cream);
+  background-image: radial-gradient(var(--blush) 2px, transparent 2px);
+  background-size: 28px 28px;
+}
+
+h1, h2, h3, header > p {
+  font-family: "Fredoka", "Nunito", sans-serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+  text-decoration: underline wavy var(--pink);
+  text-underline-offset: 8px;
+}
+h2 { font-size: 1.6rem; color: var(--berry); margin-top: 0; }
+h3 { font-size: 1.2rem; margin: 0 0 0.4rem; }
+
+a { color: var(--berry); font-weight: 700; }
+a:hover, a:focus { color: var(--pink); }
+
+/* Header + nav */
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--blush);
+  border-bottom: 4px dotted var(--pink);
+}
+body > header > p { margin: 0; font-size: 1.5rem; font-weight: 600; }
+body > header > p::before { content: "\2661  "; color: var(--pink); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 2px solid var(--pink);
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+nav a:hover, nav a:focus { transform: translateY(-3px) rotate(-2deg); background: var(--pink); color: #fff; }
+nav a[aria-current="page"] { background: var(--berry); border-color: var(--berry); color: #fff; }
+
+/* Layout */
+main { max-width: 900px; margin: 2rem auto; padding: 0 1.25rem; }
+
+main > section {
+  background: #fff;
+  border: 3px solid var(--pink);
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 6px 6px 0 var(--lavender);
+}
+
+article {
+  background: var(--blush);
+  border: 2px dashed var(--pink);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+article:last-child { margin-bottom: 0; }
+
+ul { padding-left: 1.25rem; }
+li::marker { color: var(--pink); }
+
+/* Footer */
+body > footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: var(--plum);
+  color: var(--cream);
+}
+body > footer p { margin: 0; }
+body > footer p::after { content: "  \2661"; color: var(--pink); }
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.9rem; }
+  body > header { justify-content: center; text-align: center; }
+}
